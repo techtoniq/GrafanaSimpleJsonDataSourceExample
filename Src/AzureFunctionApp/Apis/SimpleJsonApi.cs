@@ -2,6 +2,7 @@
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
+using GrafanaSimpleDataSource.Data;
 
 namespace GrafanaSimpleJsonDataSourceExample.Apis
 {
@@ -14,5 +15,15 @@ namespace GrafanaSimpleJsonDataSourceExample.Apis
         {
             return new OkResult();
         }
+
+        [FunctionName("query")]
+        public IActionResult Query(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "api/query")] TimeSeriesRequest req
+            )
+        {
+
+            return new OkResult();
+        }
+
     }
 }
