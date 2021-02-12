@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrafanaSimpleDataSource.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrafanaSimpleDataSource.Data.Example", "Src\GrafanaSimpleDataSource.Data.Example\GrafanaSimpleDataSource.Data.Example.csproj", "{5C3D1DC6-2D86-42F7-888B-A3E6DE5D5D46}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Techtoniq.Core.Lib.DynamicPlugin", "Src\Techtoniq.Core.Lib.DynamicPlugin\Techtoniq.Core.Lib.DynamicPlugin.csproj", "{3B594143-E268-4A32-A157-1A45D0093A45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techtoniq.Core.Lib.Temporal", "Src\Techtoniq.Core.Lib.Temporal\Techtoniq.Core.Lib.Temporal.csproj", "{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5C3D1DC6-2D86-42F7-888B-A3E6DE5D5D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C3D1DC6-2D86-42F7-888B-A3E6DE5D5D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C3D1DC6-2D86-42F7-888B-A3E6DE5D5D46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B594143-E268-4A32-A157-1A45D0093A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B594143-E268-4A32-A157-1A45D0093A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B594143-E268-4A32-A157-1A45D0093A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B594143-E268-4A32-A157-1A45D0093A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +59,8 @@ Global
 		{E7E06DBC-D8F9-4752-A7B8-DF648F6D947B} = {32C78F0F-A5FB-4418-9296-0519E7DEE378}
 		{AA406451-00FC-4A29-A8B3-7868A3437722} = {32C78F0F-A5FB-4418-9296-0519E7DEE378}
 		{5C3D1DC6-2D86-42F7-888B-A3E6DE5D5D46} = {32C78F0F-A5FB-4418-9296-0519E7DEE378}
+		{3B594143-E268-4A32-A157-1A45D0093A45} = {32C78F0F-A5FB-4418-9296-0519E7DEE378}
+		{5E1ED3EE-F8B6-4BA1-9EC4-77EECE39D0EC} = {32C78F0F-A5FB-4418-9296-0519E7DEE378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A008219D-469F-47E5-9E4E-C2F684B7AB60}

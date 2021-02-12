@@ -15,8 +15,12 @@ namespace GrafanaSimpleDataSource.Data
         [JsonProperty("timezone")]
         public string Timezone { get; set; }
 
+        /// <summary>
+        /// Unique panel identifier
+        /// </summary>
+        /// <example>1</example>
         [JsonProperty("panelId")]
-        public int PanelId { get; set; }
+        public long PanelId { get; set; }
 
         [JsonProperty("dashboardId")]
         public int DashboardId { get; set; }
@@ -56,8 +60,6 @@ namespace GrafanaSimpleDataSource.Data
 
         [JsonProperty("adhocFilters")]
         public IEnumerable<AdhocFilter> AdhocFilters { get; set; }
-
-
 
 
 

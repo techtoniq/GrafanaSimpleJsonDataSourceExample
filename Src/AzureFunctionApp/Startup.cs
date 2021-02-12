@@ -3,6 +3,10 @@ using AzureFunctions.Extensions.Swashbuckle;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi;
+using GrafanaSimpleDataSource.Data.DependencyInjection;
+using System;
+using Microsoft.Extensions.Configuration;
+using Techtoniq.Core.Lib.DynamicPlugin;
 
 [assembly: FunctionsStartup(typeof(AzureFunctionApp.Startup))]
 
@@ -12,10 +16,21 @@ namespace AzureFunctionApp
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
+            var config = new ConfigurationBuilder()
+                 .SetBasePath(System.IO.Directory.GetCurrentDirectory())
+                 .AddJsonFile("local.settings.json", optional: true, reloadOnChange: false)
+                 .AddEnvironmentVariables()
+                 .Build();
+            builder.Services.AddOptions();
+
+            PluginManager.LoadPlugins(config.GetValue<string>("DataSourcesPath"));
+            builder.Services.AddDataSources(AppDomain.CurrentDomain.GetAssemblies());
+
             builder.AddSwashBuckle(Assembly.GetExecutingAssembly(), opts =>
             {
                 opts.Title = "Swagger Test";
                 opts.SpecVersion = OpenApiSpecVersion.OpenApi3_0;
+                opts.XmlPath = "AzureFunctionApp.xml";
                 /*
                                 opts.AddCodeParameter = true;
                                 opts.PrependOperationWithRoutePrefix = true;
@@ -41,11 +56,6 @@ namespace AzureFunctionApp
                                 });
                 */
             });
-            /*
-            builder.Services.AddSingleton<ISimpleJsonDataSource>((s) => {
-                return new ExampleDataSource();
-            });
-            */
         }
     }
 }

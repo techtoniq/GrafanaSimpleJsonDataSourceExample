@@ -1,9 +1,11 @@
-﻿namespace GrafanaSimpleDataSource.Data
+﻿using System.Threading.Tasks;
+
+namespace GrafanaSimpleDataSource.Data
 {
-    public interface IDataSource<TResponse>
+    public interface IDataSource
     {
         string Metric { get; }
 
-        TResponse GetData(TimeSeriesRequest request);
+        Task<IDataResponse> GetDataAsync(TimeSeriesRequest request);
     }
 }
